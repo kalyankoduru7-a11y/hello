@@ -1,10 +1,18 @@
-public class helloApp {
+public class helloApp{
     public static void main(String[] args) {
 
-        // Assign name using ternary operator
-        String name = (args.length > 0) ? args[0] : "World";
+        String greeting;
 
-        // Print greeting
-        System.out.println("Hello, " + name + "!");
+        // Check if no arguments are provided
+        if (args.length == 0) {
+            greeting = "Hello, World!";
+        } else {
+            // Join all arguments with ", "
+            String names = String.join(", ", args);
+            greeting = "Hello, " + names + "!";
+        }
+
+        // Print the greeting
+        System.out.println(greeting);
     }
 }
